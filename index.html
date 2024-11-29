@@ -1231,10 +1231,110 @@
                 </div>
             </div>
             
-         
+         <div class="game_cont">
+            <div class="game">
+                <img src="files/game.jpg" alt="">
+                <a id="game1">PLAY</a>
+            </div>
+         </div>
            
 
-    
+    <style>
+        .game_cont{
+            width: 100%;display: flex;
+            justify-content: center;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        .game{
+            width: 360px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .game img{
+            width: 100%;
+            height: auto;
+        }
+        .game a{
+            height: 50px;
+            width: 250px;
+            background-color: #bda483;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 25px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .pop_iframe{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #FFFFFF66;
+    display: flex;
+    z-index: 3;
+    justify-content: center;
+    align-items: center;
+}
+iframe{
+    width: 860px;
+    height: 570px;
+    border-radius: 20px;
+    position: relative;
+ }
+ .abs_ex{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+ }
+ #frame1{
+     display: none;
+ }
+ 
+ #frame2{
+     display: none;
+ }
+ 
+ #frame3{
+     display: none;
+ }
+.iframe_small{
+  display: flex;
+  position: relative;
+}
+@media (max-width: 992px) {
+        .abs_ex{
+          display: none;
+        }
+  .play_games{
+    flex-direction: column;
+    align-items: center;
+  }
+  .play_game{
+    margin-bottom: 50px;
+  }
+  .pop_iframe{
+        width: 100%;
+    }
+    iframe{
+        width: 100%;
+        height: 570px;
+        border-radius: 20px;
+     }
+}
+
+    </style>
 
     <section class="ab-11" id="about">
         <div class="container-main footeriz-menu">
@@ -1466,8 +1566,35 @@
             </div>
         </div>
     </section>
-            
+    <div class="pop_iframe" id="frame1">
 
+    </div>          
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+            
+          
+      $('#game1').on('click',function(){
+      $('#frame1').css('display','flex');
+      $('#frame1').html('<div class="iframe_block"><div class="iframe_small"><iframe src="https://modelplat.com/gm/index.html?gameName=egt_40_super_hot&amp;partner=leonbets-prod&amp;lang=en&amp;exit_url=https://leon.bet/egs-exit.html?url%3D/casino&amp;cashier_url=https://leon.bet/deposits&amp;platform=desktop&amp;key=DemoUser_EGS_MS_INFINGAME_EGT&amp;demo=true" style="" referrerpolicy="no-referrer" sandbox="allow-scripts allow-forms allow-modals allow-pointer-lock allow-same-origin" allowfullscreen=""></iframe><img src="files/exit.png" class="abs_ex" alt=""></div></div>');
+    });
+    
+    
+    
+      jQuery(function($){
+    $(document).mouseup(function (e){ 
+      var div = $(".pop_iframe").children('iframe'); 
+      if (!div.is(e.target) 
+          && div.has(e.target).length === 0) {
+            $(".pop_iframe").css('display','none');
+            $(".pop_iframe").html('');
+      }
+    });
+    });
+    $('.abs_ex').on('click',function(){
+      $(".pop_iframe").css('display','none');
+      $(".pop_iframe").html('');
+    });
+    </script>
             
 
            
